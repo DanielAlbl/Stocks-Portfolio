@@ -1,0 +1,115 @@
+body {
+	font-size: 1em;
+    width: 10%;
+}
+
+.slider {
+	width: 30em;
+	height: 2em;
+}
+
+table {
+    margin: 0;
+}
+
+td,th {
+	padding: 5px;
+	text-align: center;
+}
+
+span {
+	font-size: 1.2em;
+}
+
+#beforeGraph, #graph, #afterGraph {
+    position: absolute;
+    align: center;
+    width: 100%;
+}
+
+#beforeGraph {
+    z-index: 2;
+    top: 0;
+}
+
+#graph {
+    z-index: 1;
+    top: 12em;
+    height: 24em;
+}
+
+#afterGraph {
+    z-index: 2;
+    top: 36em;
+}
+
+input[type=text] {
+    width: 10%; 
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 12px 12px 12px;
+}
+
+input[type=submit], button {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(31, 119, 180);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #666;
+}
+
+input[type=submit]:hover, button:hover {
+    background-color: rgb(25, 95, 144)
+}
+
+input[type=submit]:active, button:active {
+    background-color: rgb(31, 119, 180);
+    box-shadow: 0 2px #266;
+    transform: translateY(4px);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 30%;
+    height: 25px;
+    background: lightgray;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+input[type=range]:hover {
+    opacity: 1;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgb(31, 119, 180);
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: rgb(31, 119, 180);
+    cursor: pointer;
+}
+
+
+

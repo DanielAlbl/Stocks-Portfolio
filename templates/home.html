@@ -1,0 +1,75 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Daniel Albl </title>
+		<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">    
+        <link rel='stylesheet' type='text/css' href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel='stylesheet' type='text/css' href="{{url_for('static',filename='home.css')}}">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width = device-width, initial-scale = 1'>
+	</head>
+	<body>
+        <center>
+            <div class='container fill'>
+                <div class='jumbotron'>
+                    <h1 class='display-3'>Daniel Albl</h1>
+                    <hr class="my-2">
+                    <h3 class='lead'>Computer Science Student - SD School of Mines and Technology</h3>
+                    <a class='lead' href='mailto: daniel.albl@mines.sdsmt.edu'>daniel.albl@mines.sdsmt.edu</a>
+                    <p class='lead'>605-715-9797</p>
+                </div>
+                <h1>Projects</h1>
+                <hr class="my-2">
+                <br>
+                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                    <div class="card-header"><h3 class='title'>Online Rubik's Cube</h3></div>
+                    <div class="card-body">
+                        <p class="card-text">Rubik's Cube made in THREE.js that can be moved quickly with keystrokes. It can also solve the cross (first step of solving) in the lowest number of moves.</p>
+                        <button onclick="location.href='{{ url_for("rubix") }}'" class='btn-primary' type='button'>Website</button>
+                        <button onclick="window.open('https://github.com/DanielAlbl/Rubix')" class='btn-primary' type='button'>Github</button>
+                    </div>
+                </div>
+                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                    <div class="card-header"><h3 class='title'>Chess</h3></div>
+                    <div class="card-body">
+                        <p class="card-text">Online chess game where pieces are moved by clicking the piece followed by clicking the destination. All illegal moves should be impossible to make.  This was also made in THREE.js.</p>
+                        <button onclick="location.href='{{ url_for("chess") }}'" class='btn-primary' type='button'>Website</button>
+                        <button onclick="window.open('https://github.com/DanielAlbl/Chess')" class='btn-primary' type='button'>Github</button>
+                    </div>
+                </div>
+		<div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                    <div class="card-header"><h3 class='title'>Stock Growth Visualizer</h3></div>
+                    <div class="card-body">
+                        <p class="card-text">Displays a histogram of the growth of a stock price for a variable time interval. Information is taken from the Yahoo Finance API. Also displays some basic statistics.</p>
+                        <button onclick="location.href='{{ url_for("stocks") }}'" class='btn-primary' type='button'>Website</button>
+                        <button onclick="window.open('https://github.com/DanielAlbl/Stocks')" class='btn-primary' type='button'>Github</button>
+                    </div>
+                </div> 
+                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                    <div class="card-header"><h3 class='title'>C++ Tetris</h3></div>
+                    <div class="card-body">
+                        <p class="card-text">A native app made in C++ and GLUT (a c++ library built on OpenGL) that replicates the classic game of tetris.</p>
+                        <button onclick="window.open('https://github.com/DanielAlbl/Tetris')" class='btn-primary' type='button'>Github</button>
+                    </div>
+                </div> 
+                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                    <div class="card-header"><h3 class='title'>C++ Paint</h3></div>
+                    <div class="card-body">
+                        <p class="card-text">As much of a replication of MS Paint that one could assign as a school project. This was a team assignment so half the credit goes to Daniel Lindsay</p>
+                        <button onclick="window.open('https://github.com/DanielAlbl/Paint')" class='btn-primary' type='button'>Github</button>
+                    </div>
+                </div> 
+                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                    <div class="card-header"><h3 class='title'>Kattis Solutions</h3></div>
+                    <div class="card-body">
+                        <p class="card-text">A collection of my solutions to problems from Kattis (a competitive programming site). </p>
+                        <button onclick="window.open('https://github.com/DanielAlbl/Kattis')" class='btn-primary' type='button'>Github</button>
+                    </div>
+                </div> 
+            </div>
+        </center>
+	    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
+	</body>
+</html>
+

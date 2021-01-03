@@ -1,0 +1,15 @@
+.jumbotron {
+    padding: 1em;
+}
+
+.title {
+    font-size: 1.5em;
+}
+
+.card-header {
+    background-color: blue;
+}
+
+.btn-primary {
+    background-color: blue;
+}

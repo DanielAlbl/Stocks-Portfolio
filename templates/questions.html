@@ -1,0 +1,18 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Questions</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/stocks/questions.css')}}">
+	</head>
+	<body>
+		<center>
+		<h1>Questions</h1>
+		<h3>Where does the data come from?</h3>
+		<p>The data comes from Yahoo Finance's API. All calculations are based off the closing price for each day in the stock's history. Days when the market was closed were filled in with logrithmic interpolation.</p>
+		<h3>What are "Time Interval" and "Bins"?</h3>
+		<p>Given the closing prices for each day, the growth of the stock can be measured over the given time interval and this is done for each possible interval in the stock's history. For example if the interval is 14 days, I calculate the growth from day 0 to day 14, day 1 to day 15, and so on.  These growths are what is actually graphed as a histogram. The bins slider is simply the number of bins in the histogram.</p>
+		<h3>What is "Log Mean"?</h3>
+		<p>Something that bugged me about taking the regular mean of growth values is that the mean of a 2x growth and the equivalent crash (0.5x) was 1.25x (not 1x). The "Log Mean" takes the natural log of all the growth values, takes the mean of those, and finally outputs e to that average. This makes it so a growth 2x and 0.5x would result in an average of 1x.</p>
+		<h3>What is "RAR"?</h3>
+		<p>Rate adjusted return. I have defined this as the mean divided by standard deviation of the stock growths on a <b>log scale</b>.</p>
+		<a href='{{ url_for('stocks') }}'>Back To Visualizer</a>

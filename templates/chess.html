@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+	<head>
+		<title></title>
+	    <meta charset="UTF-8">
+		<link rel='stylesheet'  href="{{ url_for('static',filename='/chess/style.css') }}"/>
+		<link rel="shortcut icon" href="#" />
+	</head>
+	<body>
+		<div id='board'></div>
+		<!--<button id='test'>Test</button>
+		<button id='undo'>Undo</button>-->
+		<br>
+		<button id='home' onclick="location.href='{{ url_for("home") }}'" type='button'>Home Page</button>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js'></script>
+		<script src="{{ url_for('static',filename='/chess/global.js') }}"></script>
+		<script src="{{ url_for('static',filename='/chess/selectBox.js') }}"></script>
+		<script src="{{ url_for('static',filename='/chess/saveBoard.js') }}"></script>
+		<script src="{{ url_for('static',filename='/chess/player.js') }}"></script>
+		<script src="{{ url_for('static',filename='/chess/piece.js') }}"></script>
+		<script src="{{ url_for('static',filename='/chess/board.js') }}"></script>
+		<script src="{{ url_for('static',filename='/chess/graphics.js') }}"></script>
+	</body>
+</html>

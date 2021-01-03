@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Stock Visualizer</title>
+	<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">    
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/stocks/stocks.css')}}">
+ </head>
+  <body>
+	<center>
+    <div id='beforeGraph'>
+		<h1>Histogram of Stock Growth</h1>
+		<form action='' method='POST'>
+			<input type='hidden' name='Interval', id='intervalHidden'>
+			<input type='hidden' name='Bins' id='binsHidden'>
+			<span>Ticker: </span><input type='text' name='Ticker'> 
+			<input type='submit' value='Graph'>
+		</form>	
+		<h2 id='title'></h2>
+		<span>
+		<table id='table' border='1'>  
+			<tr>
+				<th>Mean</th><th>Std</th><th>LogMean <a href="{{url_for('questions')}}">?</a></th><th>Volatility</th><th>RAR</th>
+			</tr>
+			<tr>
+				<td id='mean'></td><td id='std'></td><td id='logMean'></td><td id='volatility'></td><td id='rar'</td>
+			</tr>
+		</table>
+		</span>
+    </div>
+    <div id='graph'></div>
+    <div id='afterGraph'>
+        <span>Time Interval:</span> 
+        <span id='intervalVal'></span>
+        <br>
+        <input type='range' id='interval'>
+        <br><br>
+        <span>Bins:</span> 
+        <span id='binVal'></span>
+        <br>
+        <input type='range' id='bins'>	
+
+        <br><br>
+        <button id='home' onclick="location.href='{{ url_for("questions") }}'" type='button'>Questions?</button>
+        <button id='home' onclick="location.href='{{ url_for("home") }}'" type='button'>Home Page</button>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js'></script>
+    <script src="{{url_for('static',filename='/stocks/stocks.js')}}"></script>
+    <script>
+        var INC, MEAN, STD, LOG_INC, LOG_MEAN, VOLATILITY;
+
+        var MIN_POS = 0;
+        var MAX_POS = 1000;
+
+        $('#interval').attr({
+            'min': MIN_POS,
+            'max': MAX_POS
+        });
+        $('#bins').attr({
+            'min': MIN_POS,
+            'max': MAX_POS
+        });
+
+        var HIST = {{ historical }};
+        var INTERVAL_POS = LogsliderInverse({{ interval }},1,HIST.length);	
+        var BINS_POS = {{ bins }};
+        var TICKER = '{{ Ticker }}:';
+        var EXISTS = {{ exists }};
+
+
+        if(!EXISTS) {
+            $('#title').hide();
+            $('#table').hide();
+            $('#afterGraph').hide();
+            $('#graph').text('Not a valid ticker!');
+        }
+
+        $(document).ready(ChangeInterval);
+        $('#interval').on('input', {initial:'false'}, ChangeInterval);
+
+        $(document).ready(ChangeBins);
+        $('#bins').on('input', {initial:'false'}, ChangeBins);
+    </script>
+  </body>
+</html>
