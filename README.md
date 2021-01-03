@@ -1,0 +1,1 @@
+The code for my stocks app is at this point not seperable from the code for my portfolio, so I decided to put all the portfolio code in this repository.  The code for the stocks app is found in "controller.py", "updateDatabase.py", "templates/stocks.html", and the "/static/stocks/" directory.  
