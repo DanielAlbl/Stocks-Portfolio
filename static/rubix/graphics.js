@@ -242,10 +242,6 @@ $(document).ready(function() {
 	}
 
 	function moveSide() {
-	    if(rotation === 0) {
-		    var audio = new Audio("static/rubix.wav");
-		    audio.play();
-	    }
 	    var side = new THREE.Group();
 	    direction.applyQuaternion(orientation);
 	    for(let i = 0; i < cube.children.length; i++)
