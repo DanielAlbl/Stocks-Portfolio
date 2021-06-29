@@ -433,14 +433,10 @@ $(document).ready(function() {
 
 	function setMetric() {
 	    var edges = solver.edges;
-	    if($('input[name="metric"]:checked').val() === 'htm') {
-			console.log("htm");
+	    if($('input[name="metric"]:checked').val() === 'htm') 
 			solver = new HTM_Solver();
-		}
-	    else {
-			console.log("qtm");
+	    else 
 			solver = new QTM_Solver();
-		}
 	    solver.edges = edges;
 	}
 
