@@ -1,8 +1,8 @@
-import pandas as pd
-import numpy as np
 import math
-import datetime
+import numpy as np
+import pandas as pd
 import yfinance as yf
+import datetime
 import mysql.connector
 from json import dumps
 from flask import Flask, render_template, request, url_for
@@ -88,7 +88,6 @@ def store(database,cursor,ticker,inc):
  
 app = Flask(__name__)
 
-
 @app.route("/")
 def home():
     return render_template('home.html')
@@ -144,4 +143,4 @@ def chess():
   #return "<html><body><h1>Test site running under Flask</h1></body></html>"
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0',debug=True)
+  app.run(host='0.0.0.0',debug=False)

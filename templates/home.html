@@ -1,10 +1,10 @@
 <!Doctype html>
 <html>
 	<head>
-		<title>Daniel Albl </title>
-		<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">    
+		<title>Daniel Albl Portfolio</title>
+		<link rel="icon" type="image/jpg" href="{{ url_for('static', filename='favicon.jpg') }}">    
         <link rel='stylesheet' type='text/css' href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel='stylesheet' type='text/css' href="{{url_for('static',filename='home.css')}}">
+        <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='home.css') }}">
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width = device-width, initial-scale = 1'>
 	</head>
@@ -42,14 +42,14 @@
                     <div class="card-body">
                         <p class="card-text">Displays a histogram of the growth of a stock price for a variable time interval. Information is taken from the Yahoo Finance API. Also displays some basic statistics.</p>
                         <button onclick="location.href='{{ url_for("stocks") }}'" class='btn-primary' type='button'>Website</button>
-                        <button onclick="window.open('https://github.com/DanielAlbl/Stocks')" class='btn-primary' type='button'>Github</button>
+                        <button onclick="window.open('https://github.com/DanielAlbl/Stocks-Portfolio')" class='btn-primary' type='button'>Github</button>
                     </div>
                 </div> 
                                 <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
                     <div class="card-header"><h3 class='title'>Neural Network</h3></div>
                     <div class="card-body">
-                        <p class="card-text">A neural network and training algorithm made completely from scratch in C++.</p>
-						<br><br>
+                        <p class="card-text">A neural network and training algorithm made completely from scratch in C++. There is also a branch for a convolution neural network.</p>
+						<br>
                         <button onclick="window.open('https://github.com/DanielAlbl/NeuralNetwork')" class='btn-primary' type='button'>Github</button>
                     </div>
                 </div> 
