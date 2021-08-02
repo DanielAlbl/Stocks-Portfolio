@@ -1,4 +1,6 @@
 body {
+	background-color: #222;
+	color: white;
 	font-size: 1em;
     width: 10%;
 }
@@ -9,6 +11,7 @@ body {
 }
 
 table {
+	background-color: #222;
     margin: 0;
 }
 

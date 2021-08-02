@@ -92,12 +92,14 @@ function Graph(bins) {
         xaxis: { 
 		title: 'Times growth per time interval',
 		tickfont: { size: 14 }
-	},
+		},
         yaxis: {
             showticklabels: false,
             showgrid: false
         },
-        layout: { autosize: true }
+		paper_bgcolor: "#222",
+		plot_bgcolor: "#222",
+		font: { color: "white" },
     };
 
     $('#title').text(TICKER);
