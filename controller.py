@@ -16,11 +16,11 @@ def stocks():
         if request.method == 'POST':
             Ticker = request.form['Ticker']
             Ticker = Ticker.upper()
-            inc = fromDatabase(cursor, Ticker)
+            prices = fromDatabase(cursor, Ticker)
             Interval = request.form['Interval']
             Bins = request.form['Bins']
-            if inc:
-                JSON = dumps(inc)
+            if prices:
+                JSON = dumps(prices)
             else:
                 NpArray = makeNpArray(Ticker)
                 if NpArray.size:

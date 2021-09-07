@@ -1,3 +1,5 @@
+"use strict";
+
 function initTHREE() {
 	Width = WINDOW_FRACT * Math.min(window.innerWidth, window.innerHeight);
 
@@ -75,7 +77,7 @@ function loop() {
 ////////////////////////////////////////////////////////////////////////////
 
 var z, angle;
-var Width, scene, camera, renerer, light, squares, board, selected = -1, score = 0;
+var Width, scene, camera, renderer, light, squares, board, selected = -1, score = 0;
 var box = new SelectBox(), saveBoard;
 const WINDOW_FRACT = 0.75;
 

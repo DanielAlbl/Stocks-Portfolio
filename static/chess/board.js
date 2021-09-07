@@ -1,3 +1,5 @@
+"use strict";
+
 function Board() {
 	this.board = new Array(64).fill(-1);
 	this.king = 4;

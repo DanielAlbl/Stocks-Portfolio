@@ -1,3 +1,5 @@
+"use strict";
+
 function SelectBox() {
 	this.lines = [];
 	this.pos = 0;

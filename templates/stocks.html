@@ -48,6 +48,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js'></script>
     <script src="{{url_for('static',filename='/stocks/stocks.js')}}"></script>
     <script>
+        "use strict";
+
         var INC, MEAN, STD, LOG_INC, LOG_MEAN, VOLATILITY;
 
         var MIN_POS = 0;
@@ -63,11 +65,10 @@
         });
 
         var HIST = {{ historical }};
-        var INTERVAL_POS = LogsliderInverse({{ interval }},1,HIST.length);	
+        var INTERVAL_POS = LogsliderInverse({{ interval }}, 1, HIST.length);	
         var BINS_POS = {{ bins }};
         var TICKER = '{{ Ticker }}:';
         var EXISTS = {{ exists }};
-
 
         if(!EXISTS) {
             $('#title').hide();

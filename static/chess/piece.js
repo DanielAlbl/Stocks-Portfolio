@@ -1,3 +1,5 @@
+"use strict";
+
 function Piece(id) {
 	this.type;
 	this.id = id;

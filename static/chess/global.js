@@ -1,3 +1,5 @@
+"use strict";
+
 // Points added to the score when a given type of piece is captured
 const POINTS = [0,5,3,3,9,2147483647,1,-5,-3,-3,-9,-2147483647,-1];
 

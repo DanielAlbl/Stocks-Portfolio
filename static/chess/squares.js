@@ -1,3 +1,5 @@
+"use strict";
+
 function Squares() {
 	this.squares = new Array();
 

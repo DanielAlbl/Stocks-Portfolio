@@ -37,18 +37,18 @@ def makeNpArray(name):
     return N
 
 def initial(cursor):
-    cursor.execute("SELECT Inc FROM TickerInc WHERE Ticker = 'SPY';")
-    inc = cursor.fetchall()
-    return dumps(inc)
+    cursor.execute("SELECT Price FROM TickerPrice WHERE Ticker = 'SPY';")
+    price = cursor.fetchall()
+    return dumps(price)
 
 def fromDatabase(cursor, ticker):
-    select = "SELECT Inc FROM TickerInc WHERE Ticker = '{0}';"
+    select = "SELECT Price FROM TickerPrice WHERE Ticker = '{0}';"
     cursor.execute(select.format(ticker))
     return cursor.fetchall()
 
-def store(database, cursor, ticker, inc):
-    insert = "INSERT INTO TickerInc ( Ticker, Inc ) VALUES ( %s, %s );"
-    for i in inc:
-        cursor.execute(insert, (ticker, float(i)))
+def store(database, cursor, ticker, prices):
+    insert = "INSERT INTO TickerPrice ( Ticker, Price ) VALUES ( %s, %s );"
+    for price in prices:
+        cursor.execute(insert, (ticker, float(price)))
     database.commit()
  
