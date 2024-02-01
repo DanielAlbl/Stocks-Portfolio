@@ -1,45 +1,16 @@
-import math
-import re
 import numpy as np
 import pandas as pd
 import yfinance as yf
-import datetime
-import mysql.connector
-from json import dumps
-from flask import Flask, render_template, request, url_for
-from logging import FileHandler, WARNING
 
 def makeNpArray(name):
-    P = yf.Ticker(name).history(period='max')
-    N = P.to_numpy()
-    N = N[:, 3]
-    size = N.size
-    idx = 0
-    for i in range(size-1):
-        date = P['Close'].keys()[i]
-        next = P['Close'].keys()[i+1]
-        date += datetime.timedelta(days=1)
-        days = 0
-        while date != next:
-            N = np.insert(N, idx+1, N[idx])
-            date += datetime.timedelta(days=1)
-            idx+=1
-            days+=1
-        
-        if days and N[idx+1]/N[idx]:
-            interp = math.exp(math.log(N[idx+1]/N[idx])/(days+1))
-            for j in range(days):
-                N[idx-days+1+j] = N[idx-days+j] * interp
-            
-        idx+=1
-    N = N[np.logical_not(N==0)]
-    N = N[np.logical_not(np.isnan(N))]
-    return N
-
-def initial(cursor):
-    cursor.execute("SELECT Price FROM TickerPrice WHERE Ticker = 'SPY';")
-    price = cursor.fetchall()
-    return dumps(price)
+    P = yf.Ticker(name).history(period='max')['Close']
+    if P.empty:
+        return np.array([])
+    date_range = pd.date_range(start=P.index.min(), end=P.index.max())
+    P_reindexed = P.reindex(date_range, fill_value=np.nan)
+    P_interpolated = P_reindexed.interpolate(method='linear')
+    N = P_interpolated.to_numpy()
+    return N[~np.isnan(N)]
 
 def fromDatabase(cursor, ticker):
     select = "SELECT Price FROM TickerPrice WHERE Ticker = '{0}';"
@@ -51,4 +22,3 @@ def store(database, cursor, ticker, prices):
     for price in prices:
         cursor.execute(insert, (ticker, float(price)))
     database.commit()
- 

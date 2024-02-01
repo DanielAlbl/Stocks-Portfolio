@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Stock Visualizer</title>
@@ -13,7 +13,7 @@
 		<form action='' method='POST'>
 			<input type='hidden' name='Interval', id='intervalHidden'>
 			<input type='hidden' name='Bins' id='binsHidden'>
-			<span>Ticker: </span><input type='text' name='Ticker'> 
+			<span>Ticker: </span><input type='text' name='Ticker'>
 			<input type='submit' value='Graph'>
 		</form>	
 		<h2 id='title'></h2>
@@ -23,7 +23,7 @@
 				<th>Mean</th><th>Std</th><th>LogMean <a href="{{url_for('questions')}}">?</a></th><th>Volatility</th><th>RAR</th>
 			</tr>
 			<tr>
-				<td id='mean'></td><td id='std'></td><td id='logMean'></td><td id='volatility'></td><td id='rar'</td>
+				<td id='mean'></td><td id='std'></td><td id='logMean'></td><td id='volatility'></td><td id='rar'></td>
 			</tr>
 		</table>
 		</span>
@@ -67,14 +67,13 @@
         var HIST = {{ historical }};
         var INTERVAL_POS = LogsliderInverse({{ interval }}, 1, HIST.length);	
         var BINS_POS = {{ bins }};
-        var TICKER = '{{ Ticker }}:';
-        var EXISTS = {{ exists }};
+        var TICKER = '{{ Ticker }}';
 
-        if(!EXISTS) {
+        if (HIST.length === 0) {
             $('#title').hide();
             $('#table').hide();
             $('#afterGraph').hide();
-            $('#graph').text('Not a valid ticker!');
+            $('#graph').text(`${TICKER} is not a valid ticker!`);
         }
 
         $(document).ready(ChangeInterval);
