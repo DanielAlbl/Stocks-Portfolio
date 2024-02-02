@@ -11,7 +11,7 @@
     <div id='beforeGraph'>
 		<h1>Histogram of Stock Growth</h1>
 		<form action='' method='POST'>
-			<input type='hidden' name='Interval', id='intervalHidden'>
+			<input type='hidden' name='Interval' id='intervalHidden'>
 			<input type='hidden' name='Bins' id='binsHidden'>
 			<span>Ticker: </span><input type='text' name='Ticker'>
 			<input type='submit' value='Graph'>
@@ -46,7 +46,7 @@
     </div>
     <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly.min.js'></script>
-    <script src="{{url_for('static',filename='/stocks/stocks.js')}}"></script>
+    <script src="{{ url_for('static',filename='/stocks/stocks.js') }}"></script>
     <script>
         "use strict";
 
