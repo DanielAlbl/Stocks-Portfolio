@@ -15,6 +15,7 @@
                     <h1 class='display-3'>Daniel Albl</h1>
                     <hr class="my-2">
                     <h3 class='lead'>Computer Science Graduate - SD School of Mines and Technology</h3>
+                    <h3 class='lead'>Software Engineer - Vivint Smart Home</h3>
                     <a class='lead' href='mailto: DanielErichAlbl@gmail.com'>DanielErichAlbl@gmail.com</a>
                     <p class='lead'>605-715-9797</p>
                 </div>
@@ -22,19 +23,20 @@
                 <hr class="my-2">
                 <br>
                 <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                    <div class="card-header"><h3 class='title'>Chess</h3></div>
+                    <div class="card-body">
+                        <p class="card-text">Fullstack chess platform written in Rust allowing users to play chess online and showing engine analysis in a unique visual way.</p>
+                        <br>
+                        <button onclick="location.href='https://oxide-chess.fly.dev'" class='btn-primary' type='button'>Website</button>
+                        <button onclick="window.open('https://github.com/OxideOps/oxide-chess')" class='btn-primary' type='button'>Github</button>
+                    </div>
+                </div>
+                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
                     <div class="card-header"><h3 class='title'>Online Rubik's Cube</h3></div>
                     <div class="card-body">
                         <p class="card-text">Rubik's Cube made in THREE.js that can be moved quickly with keystrokes. It can also solve the cross (first step of solving) in the lowest number of moves.</p>
                         <button onclick="location.href='{{ url_for("rubix") }}'" class='btn-primary' type='button'>Website</button>
                         <button onclick="window.open('https://github.com/DanielAlbl/Rubix')" class='btn-primary' type='button'>Github</button>
-                    </div>
-                </div>
-                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
-                    <div class="card-header"><h3 class='title'>Chess</h3></div>
-                    <div class="card-body">
-                        <p class="card-text">Online chess game where pieces are moved by clicking the piece followed by clicking the destination. All illegal moves should be impossible to make.  This was also made in THREE.js.</p>
-                        <button onclick="location.href='{{ url_for("chess") }}'" class='btn-primary' type='button'>Website</button>
-                        <button onclick="window.open('https://github.com/DanielAlbl/Chess')" class='btn-primary' type='button'>Github</button>
                     </div>
                 </div>
 				<div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
@@ -44,8 +46,8 @@
                         <button onclick="location.href='{{ url_for("stocks") }}'" class='btn-primary' type='button'>Website</button>
                         <button onclick="window.open('https://github.com/DanielAlbl/Stocks-Portfolio')" class='btn-primary' type='button'>Github</button>
                     </div>
-                </div> 
-                                <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
+                </div>
+                    <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 20rem;">
                     <div class="card-header"><h3 class='title'>Neural Network</h3></div>
                     <div class="card-body">
                         <p class="card-text">A neural network and training algorithm made completely from scratch in C++. There is also a branch for a convolution neural network.</p>
