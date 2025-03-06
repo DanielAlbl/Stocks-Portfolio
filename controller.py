@@ -40,9 +40,5 @@ def questions():
 def rubix():
     return render_template('rubix.html')
  
-@app.route("/Chess")
-def chess():
-    return render_template('chess.html')
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=False)
